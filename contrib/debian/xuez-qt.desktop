@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=XUEZ
+Comment=XUEZ P2P Cryptocurrency
+Comment[fr]=XUEZ, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=XUEZ, eşten eşe kriptografik sanal para birimi
+Exec=xuez-qt %u
+Terminal=false
+Type=Application
+Icon=xuez128
+MimeType=x-scheme-handler/xuez;
+Categories=Office;Finance;

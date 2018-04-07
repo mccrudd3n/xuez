@@ -1,0 +1,26 @@
+[Unit]
+Description=XUEZ's distributed currency daemon
+After=network.target
+
+[Service]
+User=xuez
+Group=xuez
+
+Type=forking
+PIDFile=/var/lib/xuezd/xuezd.pid
+
+ExecStart=/usr/bin/xuezd -daemon -pid=/var/lib/xuezd/xuezd.pid \
+          -conf=/etc/xuez/xuez.conf -datadir=/var/lib/xuezd
+
+ExecStop=-/usr/bin/xuez-cli -conf=/etc/xuez/xuez.conf \
+         -datadir=/var/lib/xuezd stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

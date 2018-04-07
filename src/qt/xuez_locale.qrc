@@ -1,0 +1,30 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="bg">locale/xuez_bg.qm</file>
+        <file alias="ca">locale/xuez_ca.qm</file>
+        <file alias="cs">locale/xuez_cs.qm</file>
+        <file alias="da">locale/xuez_da.qm</file>
+        <file alias="de">locale/xuez_de.qm</file>
+        <file alias="en">locale/xuez_en.qm</file>
+        <file alias="en_US">locale/xuez_en_US.qm</file>
+        <file alias="es">locale/xuez_es.qm</file>
+        <file alias="fi">locale/xuez_fi.qm</file>
+        <file alias="fr_FR">locale/xuez_fr_FR.qm</file>
+        <file alias="hr">locale/xuez_hr.qm</file>
+        <file alias="it">locale/xuez_it.qm</file>
+        <file alias="ja">locale/xuez_ja.qm</file>
+        <file alias="ko_KR">locale/xuez_ko_KR.qm</file>
+        <file alias="nl">locale/xuez_nl.qm</file>
+        <file alias="pl">locale/xuez_pl.qm</file>
+        <file alias="pt">locale/xuez_pt.qm</file>
+        <file alias="pt_BR">locale/xuez_pt_BR.qm</file>
+        <file alias="ro_RO">locale/xuez_ro_RO.qm</file>
+        <file alias="ru">locale/xuez_ru.qm</file>
+        <file alias="sk">locale/xuez_sk.qm</file>
+        <file alias="sv">locale/xuez_sv.qm</file>
+        <file alias="tr">locale/xuez_tr.qm</file>
+        <file alias="uk">locale/xuez_uk.qm</file>
+        <file alias="zh_CN">locale/xuez_zh_CN.qm</file>
+        <file alias="zh_TW">locale/xuez_zh_TW.qm</file>
+    </qresource>
+</RCC>
