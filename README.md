@@ -7,7 +7,7 @@ XUEZ is a cutting edge cryptocurrency, with many features not available in most 
 - Fast transactions featuring guaranteed zero confirmation transactions (_SwiftTX_).
 - Current Masternode technology used to secure the network and provide the above features, each Masternode is secured with a collateral of 1000 XUEZ.
 
-More information at [xuezcoin.com](http://www.xuez.com)
+More information at [http://www.xuezcoin.com](http://www.xuezcoin.com)
 
 ### Coin Specs
 | Algo                         | Xevan              |
