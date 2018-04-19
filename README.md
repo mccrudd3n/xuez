@@ -17,6 +17,8 @@ More information at [http://www.xuezcoin.com](http://www.xuezcoin.com)
 | Max Coin Supply (All Phases) | 21M XUEZ           |
 | XIOS swap coins              | 2,446,202 XUEZ*    |
 
+Wallet Port: 41798, RPC Port: 41799
+
 #### PoW Mining
 
 |  **Amount**             | **Notes**                |
