@@ -6,8 +6,8 @@
 	<array>
 		<integer>300</integer>
 		<integer>300</integer>
-		<integer>800</integer>
-		<integer>620</integer>
+		<integer>799</integer>
+		<integer>619</integer>
 	</array>
 	<key>background_picture</key>
 	<string>background.tiff</string>
