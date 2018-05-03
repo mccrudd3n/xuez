@@ -25,6 +25,14 @@
 
 SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle* networkStyle) : QWidget(0, f), curAlignment(0)
 {
+    
+    // transparent background
+    setAttribute(Qt::WA_TranslucentBackground);
+    setStyleSheet("background:transparent;");
+
+    // no window decorations
+    setWindowFlags(Qt::FramelessWindowHint);
+    
     // set reference point, paddings
     int paddingLeft = 14;
     int paddingTop = 470;
@@ -48,7 +56,7 @@ SplashScreen::SplashScreen(Qt::WindowFlags f, const NetworkStyle* networkStyle) 
     pixmap = networkStyle->getSplashImage();
 
     QPainter pixPaint(&pixmap);
-    pixPaint.setPen(QColor(170, 23, 0));
+    pixPaint.setPen(QColor(80, 80, 80));
 
     // check font size and drawing with
     pixPaint.setFont(QFont(font, 28 * fontFactor));

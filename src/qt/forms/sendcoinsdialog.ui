@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>850</width>
-    <height>610</height>
+    <height>750</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -651,7 +651,7 @@
         <x>0</x>
         <y>0</y>
         <width>824</width>
-        <height>74</height>
+        <height>214</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,1">
@@ -1460,7 +1460,7 @@
  </resources>
  <connections/>
  <buttongroups>
-  <buttongroup name="groupFee"/>
   <buttongroup name="groupCustomFee"/>
+  <buttongroup name="groupFee"/>
  </buttongroups>
 </ui>
