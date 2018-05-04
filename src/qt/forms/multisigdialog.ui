@@ -10,12 +10,6 @@
     <height>800</height>
    </rect>
   </property>
-  <property name="sizePolicy">
-   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-    <horstretch>0</horstretch>
-    <verstretch>0</verstretch>
-   </sizepolicy>
-  </property>
   <property name="windowTitle">
    <string>Multisignature Address Interactions</string>
   </property>
@@ -784,7 +778,7 @@ txScrollArea:{
                 <x>0</x>
                 <y>0</y>
                 <width>725</width>
-                <height>77</height>
+                <height>76</height>
                </rect>
               </property>
               <layout class="QVBoxLayout" name="verticalLayout_9">
