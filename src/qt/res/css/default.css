@@ -23,8 +23,8 @@
 /****************************************************************************************/
 
 WalletFrame {
-/*border-image: url(':/images/walletFrame_bg') 0 0 0 0 stretch stretch;*/
-border-top: 2px solid #333785;
+/*border-image: url(':/images/walletFrame_bg') 0 0 0 0 stretch stretch;
+border-top: 0px solid #041C95;*/
 margin:0;
 padding:0;
 background-color:#EEE
@@ -45,7 +45,7 @@ background-color:#fff;
 
 QMenuBar::item {
 background-color:#fff;
-color:#333;
+color:#041C95;
 }
 
 QMenuBar::item:selected {
@@ -57,16 +57,16 @@ background-color:#f8f6f6;
 }
 
 QMenu::item {
-color:#333;
+color:#041C95;
 }
 
 QMenu::item:selected {
 background-color:#f2f0f0;
-color:#333;
+color:#041C95;
 }
 
 QToolBar {
-background-color: #333785;
+background-color: #041C95;
 border:0px;
 padding:0;
 margin:0;
@@ -75,7 +75,7 @@ width: 70px;
 
 QToolBar > QToolButton {
 Alignment: left;
-background-color: #333785;
+background-color: #041C95;
 selection-background-color:transparent;
 border: 0px solid #EEE;
 min-height:1em;
