@@ -141,6 +141,8 @@ extern bool ParseBool(const json_spirit::Object& o, std::string strKey);
 extern void InitRPCMining();
 extern void ShutdownRPCMining();
 
+extern double GetPoSKernelPS();
+
 extern int64_t nWalletUnlockTime;
 extern CAmount AmountFromValue(const json_spirit::Value& value);
 extern json_spirit::Value ValueFromAmount(const CAmount& amount);
