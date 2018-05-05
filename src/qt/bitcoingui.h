@@ -137,7 +137,8 @@ private:
     /** Keep track of previous number of blocks, to detect progress */
     int prevBlocks;
     int spinnerFrame;
-
+    uint64_t nWeight;
+    
     /** Create the main UI actions. */
     void createActions(const NetworkStyle* networkStyle);
     /** Create the menu bar and sub-menus. */
@@ -180,6 +181,7 @@ public slots:
     */
     void message(const QString& title, const QString& message, unsigned int style, bool* ret = NULL);
 
+    void updateWeight();
     void setStakingStatus();
 
 #ifdef ENABLE_WALLET
