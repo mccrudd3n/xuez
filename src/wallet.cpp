@@ -4196,7 +4196,7 @@ bool CWallet::MintToTxIn(CZerocoinMint zerocoinSelected, int nSecurityLevel, con
         receipt.AddSpend(zcSpend);
     }
     catch (const std::exception&) {
-        receipt.SetStatus("CoinSpend: Accumulator witness does not verify", ZXUEZ_INVALID_WITNESS);
+        receipt.SetStatus("(Wallet) CoinSpend: Accumulator witness does not verify", ZXUEZ_INVALID_WITNESS);
         return false;
     }
 
