@@ -269,7 +269,7 @@ bool CActiveMasternode::Register(std::string strService, std::string strKeyMaste
     }
 
     CService service = CService(strService);
-    if (Params().NetworkID() == CBaseChainParams::MAIN) {
+    /*if (Params().NetworkID() == CBaseChainParams::MAIN) {
         if (service.GetPort() != 41798) {
             errorMessage = strprintf("Invalid port %u for masternode %s - only 41798 is supported on mainnet.", service.GetPort(), strService);
             LogPrintf("CActiveMasternode::Register() - %s\n", errorMessage);
@@ -279,7 +279,7 @@ bool CActiveMasternode::Register(std::string strService, std::string strKeyMaste
         errorMessage = strprintf("Invalid port %u for masternode %s - 41798 is only supported on mainnet.", service.GetPort(), strService);
         LogPrintf("CActiveMasternode::Register() - %s\n", errorMessage);
         return false;
-    }
+    }*/
 
     addrman.Add(CAddress(service), CNetAddr("127.0.0.1"), 2 * 60 * 60);
 

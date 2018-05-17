@@ -7,11 +7,14 @@
     <x>0</x>
     <y>0</y>
     <width>850</width>
-    <height>610</height>
+    <height>750</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Send Coins</string>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>false</bool>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout" stretch="0,1,0,0">
    <property name="bottomMargin">
@@ -651,7 +654,7 @@
         <x>0</x>
         <y>0</y>
         <width>824</width>
-        <height>74</height>
+        <height>214</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,1">
