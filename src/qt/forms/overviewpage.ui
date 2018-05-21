@@ -892,30 +892,26 @@
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_5">
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="0">
-             <item>
-              <widget class="QLabel" name="label_5z">
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>20</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="toolTip">
-                <string>Combined Balances (including unconfirmed and immature coins)</string>
-               </property>
-               <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Combined Balances&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
+            <widget class="QLabel" name="label_5z">
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="toolTip">
+              <string>Combined Balances (including unconfirmed and immature coins)</string>
+             </property>
+             <property name="text">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Combined Balances:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+            </widget>
            </item>
            <item>
             <layout class="QGridLayout" name="gridLayout_3">
@@ -1161,7 +1157,7 @@ If AutoMint is enabled this percentage will settle around the configured AutoMin
           <property name="geometry">
            <rect>
             <x>0</x>
-            <y>0</y>
+            <y>-10</y>
             <width>465</width>
             <height>171</height>
            </rect>
@@ -1174,27 +1170,29 @@ If AutoMint is enabled this percentage will settle around the configured AutoMin
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_7">
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="0">
-             <item>
-              <widget class="QLabel" name="label_5z_3">
-               <property name="maximumSize">
-                <size>
-                 <width>16777215</width>
-                 <height>20</height>
-                </size>
-               </property>
-               <property name="font">
-                <font>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="text">
-                <string>Zerocoin Balance</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
+            <widget class="QLabel" name="label_5z_3">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>16777215</width>
+               <height>20</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <weight>75</weight>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="lineWidth">
+              <number>0</number>
+             </property>
+             <property name="text">
+              <string>zXUEZ Balance:</string>
+             </property>
+            </widget>
            </item>
            <item>
             <layout class="QGridLayout" name="gridLayout_5">
@@ -1299,6 +1297,48 @@ These zXUEZ are spendable.</string>
                </property>
               </spacer>
              </item>
+             <item row="3" column="1">
+              <widget class="QLabel" name="labelzBalanceImmature">
+               <property name="font">
+                <font>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="toolTip">
+                <string>Unconfirmed: less than 20 confirmations
+Immature: confirmed, but less than 3 mints of the same denomination after it was minted</string>
+               </property>
+               <property name="text">
+                <string>0.000 000 00 XUEZ</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="labelzBalanceImmatureText">
+               <property name="toolTip">
+                <string>Unconfirmed: less than 20 confirmations
+Immature: confirmed, but less than 3 mints of the same denomination after it was minted</string>
+               </property>
+               <property name="text">
+                <string>Immature:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="labelzBalanceUnconfirmedText">
+               <property name="toolTip">
+                <string>Unconfirmed: less than 20 confirmations
+Immature: confirmed, but less than 3 mints of the same denomination after it was minted</string>
+               </property>
+               <property name="text">
+                <string>Unconfirmed:</string>
+               </property>
+              </widget>
+             </item>
              <item row="4" column="1">
               <widget class="QLabel" name="labelzBalanceMature">
                <property name="font">
@@ -1319,16 +1359,18 @@ These zXUEZ are spendable.</string>
                </property>
               </widget>
              </item>
-             <item row="2" column="0">
-              <widget class="QLabel" name="labelzBalanceUnconfirmedText">
-               <property name="toolTip">
-                <string>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 3 mints of the same denomination after it was minted</string>
+             <item row="3" column="2">
+              <spacer name="horizontalSpacer_7">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
                </property>
-               <property name="text">
-                <string>Unconfirmed:</string>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
                </property>
-              </widget>
+              </spacer>
              </item>
              <item row="2" column="1">
               <widget class="QLabel" name="labelzBalanceUnconfirmed">
@@ -1352,50 +1394,6 @@ Immature: confirmed, but less than 3 mints of the same denomination after it was
              </item>
              <item row="2" column="2">
               <spacer name="horizontalSpacer_5">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>40</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item row="3" column="0">
-              <widget class="QLabel" name="labelzBalanceImmatureText">
-               <property name="toolTip">
-                <string>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 3 mints of the same denomination after it was minted</string>
-               </property>
-               <property name="text">
-                <string>Immature:</string>
-               </property>
-              </widget>
-             </item>
-             <item row="3" column="1">
-              <widget class="QLabel" name="labelzBalanceImmature">
-               <property name="font">
-                <font>
-                 <weight>75</weight>
-                 <bold>true</bold>
-                </font>
-               </property>
-               <property name="toolTip">
-                <string>Unconfirmed: less than 20 confirmations
-Immature: confirmed, but less than 3 mints of the same denomination after it was minted</string>
-               </property>
-               <property name="text">
-                <string>0.000 000 00 XUEZ</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item row="3" column="2">
-              <spacer name="horizontalSpacer_7">
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
                </property>

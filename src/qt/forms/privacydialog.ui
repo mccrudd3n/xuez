@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>991</width>
-    <height>568</height>
+    <height>656</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -52,13 +52,13 @@
           </font>
          </property>
          <property name="toolTip">
-          <string>XUEZ which were anonymized via Zerocin Protocol</string>
+          <string>XUEZ which were anonymized via Zerocoin Protocol</string>
          </property>
          <property name="autoFillBackground">
           <bool>true</bool>
          </property>
          <property name="text">
-          <string>ZeroXuez (zXUEZ)</string>
+          <string>zXUEZ</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -83,7 +83,7 @@
                   </font>
                  </property>
                  <property name="text">
-                  <string>Zerocoin Actions:</string>
+                  <string>zXUEZ Actions:</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -148,7 +148,7 @@
                   <string>Enter an amount of XUEZ to convert to zXUEZ</string>
                  </property>
                  <property name="text">
-                  <string>Mint Zerocoin</string>
+                  <string>Mint zXUEZ</string>
                  </property>
                 </widget>
                </item>
@@ -223,7 +223,7 @@
                   </size>
                  </property>
                  <property name="toolTip">
-                  <string>Reset Zerocoin Wallet DB. Deletes transactions that did not make it into the blockchain.</string>
+                  <string>Reset zXUEZ Wallet DB. Deletes transactions that did not make it into the blockchain.</string>
                  </property>
                  <property name="text">
                   <string>Reset</string>
@@ -401,7 +401,7 @@
                   </size>
                  </property>
                  <property name="toolTip">
-                  <string>Rescan the complete blockchain for  Zerocoin mints and their meta-data.</string>
+                  <string>Rescan the complete blockchain for zXUEZ mints and their meta-data.</string>
                  </property>
                  <property name="text">
                   <string>ReScan</string>
@@ -550,10 +550,10 @@
                   </size>
                  </property>
                  <property name="toolTip">
-                  <string>Spend Zerocoin. Without 'Pay To:' address creates payments to yourself.</string>
+                  <string>Spend zXUEZ. Without 'Pay To:' address creates payments to yourself.</string>
                  </property>
                  <property name="text">
-                  <string>Spend Zerocoin</string>
+                  <string>Spend zXUEZ</string>
                  </property>
                 </widget>
                </item>
@@ -607,7 +607,7 @@ zXUEZ are mature when they have more than 20 confirmations AND more than 2 mints
                <item>
                 <widget class="QLabel" name="labelSecurityLevel">
                  <property name="toolTip">
-                  <string>Security Level for Zerocoin Transactions. More is better, but needs more time and resources.</string>
+                  <string>Security Level for zXUEZ Transactions. More is better, but needs more time and resources.</string>
                  </property>
                  <property name="frameShape">
                   <enum>QFrame::Box</enum>
@@ -833,7 +833,7 @@ zXUEZ are mature when they have more than 20 confirmations AND more than 2 mints
                   <enum>Qt::LeftToRight</enum>
                  </property>
                  <property name="text">
-                  <string>Convert Change to Zerocoin (might cost additional fees)</string>
+                  <string>Convert Change to zXUEZ (might cost additional fees)</string>
                  </property>
                 </widget>
                </item>
@@ -895,10 +895,10 @@ zXUEZ are mature when they have more than 20 confirmations AND more than 2 mints
                   </font>
                  </property>
                  <property name="toolTip">
-                  <string>Information about the available Zerocoin funds.</string>
+                  <string>Information about the available zXUEZ funds.</string>
                  </property>
                  <property name="text">
-                  <string>Zerocoin Stats:</string>
+                  <string>zXUEZ Stats:</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -963,7 +963,7 @@ zXUEZ are mature when they have more than 20 confirmations AND more than 2 mints
                   <string>Total Balance including unconfirmed and immature zXUEZ</string>
                  </property>
                  <property name="text">
-                  <string>Total Zerocoin  Balance:</string>
+                  <string>Total zXUEZ  Balance:</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>

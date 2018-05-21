@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>576</width>
-    <height>442</height>
+    <height>471</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -168,7 +168,7 @@
             </size>
            </property>
            <property name="toolTip">
-            <string>Wait with automatic conversion to Zerocoin until enough XUEZ for this denomination is available</string>
+            <string>Wait with automatic conversion to zXUEZ until enough XUEZ for this denomination is available</string>
            </property>
            <property name="text">
             <string>Preferred Automint zXUEZ Denomination</string>
@@ -184,7 +184,7 @@
             </size>
            </property>
            <property name="toolTip">
-            <string>Wait with automatic conversion to Zerocoin until enough XUEZ for this denomination is available</string>
+            <string>Wait with automatic conversion to zXUEZ until enough XUEZ for this denomination is available</string>
            </property>
            <property name="maxVisibleItems">
             <number>9</number>
