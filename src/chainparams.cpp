@@ -43,12 +43,13 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
     (0, uint256("0x000000e1febc39965b055e8e0117179a4d18e24e7aaa0c69864c4054b4f29445"))
     (10000, uint256("0x00000000dc3b475c5bcf9aa88995e198cb9636e1e779411c9e3c2ffc2e936d27"))
     (20000, uint256("0x000000024510d5cd0af4858403e4bdb6b0bc0b4a38c4ae131000237e32df2dad"))
-    (30000, uint256("0x00000000755350c0a11b32206053ebb328f979f80a8f32a02e3b9ed3b87fade7"));
+    (30000, uint256("0x00000000755350c0a11b32206053ebb328f979f80a8f32a02e3b9ed3b87fade7"))
+    (130000, uint256("0x5f9d81f3bda7a68771fc6610b6899f5e6da9fb1f3dac8cf3fa561b1a1003bbd8"));
 	
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1524976747, // * UNIX timestamp of last checkpoint block
+    1531030598, // * UNIX timestamp of last checkpoint block
     1,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
    5600        // * estimated number of transactions per day after checkpoint
@@ -60,7 +61,7 @@ static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
 
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
-    1523045620,
+    1531030598,
     0,
     250};
 
@@ -70,7 +71,7 @@ static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
     
 static const Checkpoints::CCheckpointData dataRegtest = {
     &mapCheckpointsRegtest,
-    1523045620,
+    1531030598,
     1,
     100};
 
@@ -182,7 +183,11 @@ public:
         fTestnetToBeDeprecatedFieldRPC = false;
         fHeadersFirstSyncingActive = false;
         nPoolMaxTransactions = 3;
-        strSporkKey = "0421fb0665876637d9d79d03a24f383393838fb9e3340858a6d5a70b079f4af57cfff3ca00310be5300d532adf6261ba98ac70d24d943a6be333bec6d7a6d93013";
+
+        //strSporkKey = "0421fb0665876637d9d79d03a24f383393838fb9e3340858a6d5a70b079f4af57cfff3ca00310be5300d532adf6261ba98ac70d24d943a6be333bec6d7a6d93013";
+        //new spork key
+        strSporkKey = "046c3e4e3ce9d169c5cd9e7434825aa084ee39a16a15cc6ccde838e97a828dbcac1364cfd0b3de9cef24d4f1ea0129c13b2839eeaefe301d3cf3aa4c144eef22b8";
+
         strObfuscationPoolDummyAddress = "VTHprUHgceGPTTaAmajjcELftpUTKNhyJt";
         nStartMasternodePayments = 1521792000; //Fri, 23 Mar 2018 8:00 UTC
 
