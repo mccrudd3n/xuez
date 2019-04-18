@@ -26,7 +26,7 @@ Drag Xuez-Qt to your applications folder, and then run Xuez-Qt.
 
 ### Need Help?
 
-* Ask for help on [Discord (External Link)] (https://discord.gg/ajVxF2)
+* Ask for help on [Discord (External Link)] (https://discord.gg/fGm8czp)
 
 Building
 ---------------------
