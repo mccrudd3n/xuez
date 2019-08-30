@@ -1,3 +1,4 @@
+// Copyright (c) 2017-2019 The PIVX developers
 // Copyright (c) 2017-2020 The Xuez developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -6,9 +7,32 @@
 
 #include <amount.h>
 #include <limits.h>
+#include <chainparams.h>
 #include "libzerocoin/bignum.h"
 #include "libzerocoin/Denominations.h"
+#include "key.h"
 #include "serialize.h"
+
+//struct that is safe to store essential mint data, without holding any information that allows for actual spending (serial, randomness, private key)
+struct CMintMeta
+{
+    int nHeight;
+    uint256 hashSerial;
+    uint256 hashPubcoin;
+    uint256 hashStake; //requires different hashing method than hashSerial above
+    uint8_t nVersion;
+    libzerocoin::CoinDenomination denom;
+    uint256 txid;
+    bool isUsed;
+    bool isArchived;
+    bool isDeterministic;
+    bool isSeedCorrect;
+
+    bool operator <(const CMintMeta& a) const;
+};
+
+uint256 GetSerialHash(const CBigNum& bnSerial);
+uint256 GetPubCoinHash(const CBigNum& bnValue);
 
 class CZerocoinMint
 {
@@ -19,15 +43,21 @@ private:
     CBigNum randomness;
     CBigNum serialNumber;
     uint256 txid;
+    int outputIndex = -1;
+    CPrivKey privkey;
+    uint8_t version;
     bool isUsed;
 
 public:
+    static const int STAKABLE_VERSION = 2;
+    static const int CURRENT_VERSION = 2;
+
     CZerocoinMint()
     {
         SetNull();
     }
 
-    CZerocoinMint(libzerocoin::CoinDenomination denom, CBigNum value, CBigNum randomness, CBigNum serialNumber, bool isUsed)
+    CZerocoinMint(libzerocoin::CoinDenomination denom, const CBigNum& value, const CBigNum& randomness, const CBigNum& serialNumber, bool isUsed, const uint8_t& nVersion, CPrivKey* privkey = nullptr)
     {
         SetNull();
         this->denomination = denom;
@@ -35,6 +65,9 @@ public:
         this->randomness = randomness;
         this->serialNumber = serialNumber;
         this->isUsed = isUsed;
+        this->version = nVersion;
+        if (nVersion >= 2 && privkey)
+            this->privkey = *privkey;
     }
 
     void SetNull()
@@ -45,6 +78,8 @@ public:
         denomination = libzerocoin::ZQ_ERROR;
         nHeight = 0;
         txid = 0;
+        version = 1;
+        privkey.clear();
     }
 
     uint256 GetHash() const;
@@ -64,6 +99,14 @@ public:
     void SetSerialNumber(CBigNum serial){ this->serialNumber = serial; }
     uint256 GetTxHash() const { return this->txid; }
     void SetTxHash(uint256 txid) { this->txid = txid; }
+    uint8_t GetVersion() const { return this->version; }
+    void SetVersion(const uint8_t nVersion) { this->version = nVersion; }
+    CPrivKey GetPrivKey() const { return this->privkey; }
+    void SetPrivKey(const CPrivKey& privkey) { this->privkey = privkey; }
+    bool GetKeyPair(CKey& key) const;
+
+    int GetOutputIndex() { return this->outputIndex; }
+    void SetOutputIndex(int index) { this->outputIndex = index; }
 
     inline bool operator <(const CZerocoinMint& a) const { return GetHeight() < a.GetHeight(); }
 
@@ -75,13 +118,17 @@ public:
         serialNumber = other.GetSerialNumber();
         txid = other.GetTxHash();
         isUsed = other.IsUsed();
+        version = other.GetVersion();
+        privkey = other.privkey;
     }
+
+    std::string ToString() const;
 
     bool operator == (const CZerocoinMint& other) const
     {
         return this->GetValue() == other.GetValue();
     }
-    
+
     // Copy another CZerocoinMint
     inline CZerocoinMint& operator=(const CZerocoinMint& other) {
         denomination = other.GetDenomination();
@@ -91,9 +138,11 @@ public:
         serialNumber = other.GetSerialNumber();
         txid = other.GetTxHash();
         isUsed = other.IsUsed();
+        version = other.GetVersion();
+        privkey = other.GetPrivKey();
         return *this;
     }
-    
+
     // why 6 below (SPOCK)
     inline bool checkUnused(int denom, int Height) const {
         if (IsUsed() == false && GetDenomination() == denomination && GetRandomness() != 0 && GetSerialNumber() != 0 && GetHeight() != -1 && GetHeight() != INT_MAX && GetHeight() >= 1 && (GetHeight() + 6 <= Height)) {
@@ -114,6 +163,21 @@ public:
         READWRITE(denomination);
         READWRITE(nHeight);
         READWRITE(txid);
+
+        bool fVersionedMint = true;
+        try {
+            READWRITE(version);
+        } catch (...) {
+            fVersionedMint = false;
+        }
+
+        if (version > CURRENT_VERSION) {
+            version = 1;
+            fVersionedMint = false;
+        }
+
+        if (fVersionedMint)
+            READWRITE(privkey);
     };
 };
 
@@ -159,7 +223,7 @@ public:
     uint256 GetHash() const;
     void SetMintCount(int nMintsAdded) { this->nMintCount = nMintsAdded; }
     int GetMintCount() const { return nMintCount; }
- 
+
     ADD_SERIALIZE_METHODS;
 
     template <typename Stream, typename Operation>
@@ -188,5 +252,15 @@ public:
     int GetStatus();
     int GetNeededSpends();
 };
+
+/**
+ * Wrapped serials attack inflation, only for mainnet.
+ * FUTURE: Move this to another file..
+ * @param denom
+ * @return
+ */
+int GetWrapppedSerialInflation(libzerocoin::CoinDenomination denom);
+
+int64_t GetWrapppedSerialInflationAmount();
 
 #endif //Xuez_ZEROCOIN_H
