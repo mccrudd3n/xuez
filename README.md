@@ -2,7 +2,11 @@ XUEZ Core integration/staging repository
 =====================================
 [![GitHub version](https://badge.fury.io/gh/XUEZ%2FXUEZ.svg)](https://badge.fury.io/gh/XUEZ%2FXUEZ)
 
-XUEZ is a cutting edge cryptocurrency, with many features not available in most other cryptocurrencies.
+
+XUEZ is a peer to peer digital asset, with the mission of building and providing an open platform where privacy and anonymity are prioritized and valued as they are a fundamental human right. These rights are recognized in the Universal Declaration of Human Rights, The International Convention on Civil and Political right and in many other international and regional treaties.
+
+The XUEZ protocol is being specifically designed, not only to address the inherent problems plaguing Bitcoin and other cryptocurrencies, but also to build and disrupt central entities through our distribution phase, while building the next-generation decentralised information infrastructure.
+
 - Anonymized transactions using coin mixing technology, we call it _Xend_.
 - Fast transactions featuring guaranteed zero confirmation transactions (_SwiftTX_).
 - Current Masternode technology used to secure the network and provide the above features, each Masternode is secured with a collateral of 1000 XUEZ.
