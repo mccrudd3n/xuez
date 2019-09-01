@@ -1,8 +1,8 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2018 The Xuez developers
+// Copyright (c) 2015-2019 The PIVX developers
+// Copyright (c) 2017-2020 The XUEZ developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -12,7 +12,7 @@
 #include "init.h"
 #include "net.h"
 #include "netbase.h"
-#include "rpcserver.h"
+#include "rpc/server.h"
 #include "timedata.h"
 #include "util.h"
 #include "utilmoneystr.h"
@@ -889,7 +889,7 @@ Value sendmany(const Array& params, bool fHelp)
     return wtx.GetHash().GetHex();
 }
 
-// Defined in rpcmisc.cpp
+// Defined in rpc/misc.cpp
 extern CScript _createmultisig_redeemScript(const Array& params);
 
 Value addmultisigaddress(const Array& params, bool fHelp)
@@ -2321,23 +2321,23 @@ Value getzerocoinbalance(const Array& params, bool fHelp)
 }
 Value listmintedzerocoins(const Array& params, bool fHelp)
 {
-    
+
     if (fHelp || params.size() != 0)
         throw runtime_error(
                             "listmintedzerocoins\n"
                             + HelpRequiringPassphrase());
-    
+
     if (pwalletMain->IsLocked())
         throw JSONRPCError(RPC_WALLET_UNLOCK_NEEDED, "Error: Please enter the wallet passphrase with walletpassphrase first.");
-    
+
     CWalletDB walletdb(pwalletMain->strWalletFile);
     list<CZerocoinMint> listPubCoin = walletdb.ListMintedCoins(true, false, true);
-    
+
     Array jsonList;
     for (const CZerocoinMint& pubCoinItem : listPubCoin) {
         jsonList.push_back(pubCoinItem.GetValue().GetHex());
     }
-    
+
     return jsonList;
 }
 
@@ -2354,7 +2354,7 @@ Value listzerocoinamounts(const Array& params, bool fHelp)
 
     CWalletDB walletdb(pwalletMain->strWalletFile);
     list<CZerocoinMint> listPubCoin = walletdb.ListMintedCoins(true, true, true);
- 
+
     std::map<libzerocoin::CoinDenomination, CAmount> spread;
     for (const auto& denom : libzerocoin::zerocoinDenomList)
         spread.insert(std::pair<libzerocoin::CoinDenomination, CAmount>(denom, 0));
@@ -2431,7 +2431,7 @@ Value mintzerocoin(const Array& params, bool fHelp)
         m.push_back(Pair("time", GetTimeMillis() - nTime));
         arrMints.push_back(m);
     }
-    
+
     return arrMints;
 }
 

@@ -23,6 +23,7 @@ Build-Depends: debhelper,
  libprotobuf-dev, protobuf-compiler
 Standards-Version: 3.9.2
 Homepage: https://www.xuezcoin.com
+Discord: https://discord.gg/fGm8czp
 Vcs-Git: git://github.com/xuez/xuez.git
 Vcs-Browser: http://github.com/xuez/xuez
 

@@ -1,6 +1,6 @@
 // Copyright (c) 2014-2015 The Dash Developers
-// Copyright (c) 2015-2017 The PIVX developers
-// Copyright (c) 2018 The Xuez developers
+// Copyright (c) 2015-2019 The PIVX developers
+// Copyright (c) 2017-2020 The XUEZ developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -12,7 +12,7 @@
 #include "masternode-payments.h"
 #include "masternodeconfig.h"
 #include "masternodeman.h"
-#include "rpcserver.h"
+#include "rpc/server.h"
 #include "utilmoneystr.h"
 
 #include <fstream>
