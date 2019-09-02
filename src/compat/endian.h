@@ -6,7 +6,11 @@
 #define BITCOIN_COMPAT_ENDIAN_H
 
 #if defined(HAVE_CONFIG_H)
+<<<<<<< HEAD
 #include <config/xuez-config.h>
+=======
+#include <config/pivx-config.h>
+>>>>>>> 17d28d4018c79450afe5293656840c2cbd4bb214
 #endif
 
 #include <compat/byteswap.h>
