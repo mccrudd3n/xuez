@@ -1,6 +1,6 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2017 The PIVX developers     
+// Copyright (c) 2017 The PIVX developers
 // Copyright (c) 2017-2020 The Xuez developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -247,20 +247,27 @@ bool CScript::IsPayToScriptHash() const
             this->at(0) == OP_HASH160 &&
             this->at(1) == 0x14 &&
             this->at(22) == OP_EQUAL);
+
+bool CScript::StartsWithOpcode(const opcodetype opcode) const
+{
+    return (!this->empty() && this->at(0) == opcode);
 }
 
 bool CScript::IsZerocoinMint() const
 {
-    //fast test for Zerocoin Mint CScripts
-    return (this->size() > 0 &&
-        this->at(0) == OP_ZEROCOINMINT);
+    return StartsWithOpcode(OP_ZEROCOINMINT);
 }
 
 bool CScript::IsZerocoinSpend() const
 {
-    return (this->size() > 0 &&
-        this->at(0) == OP_ZEROCOINSPEND);
+    return StartsWithOpcode(OP_ZEROCOINSPEND);
 }
+
+bool CScript::IsZerocoinPublicSpend() const
+{
+    return StartsWithOpcode(OP_ZEROCOINPUBLICSPEND);
+}
+
 
 bool CScript::IsPushOnly(const_iterator pc) const
 {
