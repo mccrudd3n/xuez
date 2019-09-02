@@ -67,7 +67,7 @@ static int FLAGS_num_pages = 4096;
 // If true, do not destroy the existing database.  If you set this
 // flag and also specify a benchmark that wants a fresh database, that
 // benchmark will fail.
-static bool FLAGS_use_existing_db = false;
+static bool FLAGS_use_existing_db = true;
 
 // If true, we allow batch writes to occur
 static bool FLAGS_transaction = true;

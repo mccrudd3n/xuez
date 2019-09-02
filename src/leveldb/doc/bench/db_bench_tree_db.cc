@@ -62,7 +62,7 @@ static int FLAGS_page_size = 1024;
 // If true, do not destroy the existing database.  If you set this
 // flag and also specify a benchmark that wants a fresh database, that
 // benchmark will fail.
-static bool FLAGS_use_existing_db = false;
+static bool FLAGS_use_existing_db = true;
 
 // Compression flag. If true, compression is on. If false, compression
 // is off.
