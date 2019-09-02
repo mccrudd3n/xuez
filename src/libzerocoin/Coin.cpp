@@ -10,7 +10,7 @@
  * @license    This project is released under the MIT license.
  **/
 
-// Copyright (c) 2017-2020 The XUEZ developers
+// Copyright (c) 2015-2020 The XUEZ developers
 #include <stdexcept>
 #include <iostream>
 #include "Coin.h"
