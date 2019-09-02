@@ -9,7 +9,9 @@
 * @copyright  Copyright 2013 Ian Miers, Christina Garman and Matthew Green
 * @license    This project is released under the MIT license.
 **/
-// Copyright (c) 2017-2020 The Xuez developers
+// Copyright (c) 2015-2020 The Xuez developers
+// Copyright (c) 2015-2019 The PIVX developers
+
 #ifndef PARAMS_H_
 #define PARAMS_H_
 
@@ -62,7 +64,7 @@ public:
 		    READWRITE(h);
 		    READWRITE(modulus);
 		    READWRITE(groupOrder);
-	}	
+	}
 };
 
 class AccumulatorAndProofParams {
@@ -202,7 +204,7 @@ public:
 	 * proofs.
 	 */
 	uint32_t zkp_hash_len;
-	
+
 	ADD_SERIALIZE_METHODS;
   template <typename Stream, typename Operation>  inline void SerializationOp(Stream& s, Operation ser_action, int nType, int nVersion) {
 	    READWRITE(initialized);

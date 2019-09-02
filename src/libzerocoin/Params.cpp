@@ -9,7 +9,9 @@
 * @copyright  Copyright 2013 Ian Miers, Christina Garman and Matthew Green
 * @license    This project is released under the MIT license.
 **/
-// Copyright (c) 2017-2020 The Xuez developers
+// Copyright (c) 2015-2020 The Xuez developers
+// Copyright (c) 2015-2019 The PIVX developers
+
 #include "Params.h"
 #include "ParamGeneration.h"
 

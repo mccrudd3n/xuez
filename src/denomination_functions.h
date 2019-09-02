@@ -7,7 +7,7 @@
  * @license    This project is released under the MIT license.
  **/
 // Copyright (c) 2015-2019 The PIVX developers
-// Copyright (c) 2017-2020 The Xuez developers
+// Copyright (c) 2015-2020 The Xuez developers
 
 #include "reverse_iterate.h"
 #include "util.h"
