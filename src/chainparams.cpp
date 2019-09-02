@@ -1,6 +1,6 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2014-2015 The Dash developers
+// Copyright (c) 2014-2020 The Dash developers
 // Copyright (c) 2015-2019 The PIVX developers
 // Copyright (c) 2017-2020 The XUEZ developers
 // Distributed under the MIT software license, see the accompanying
@@ -47,7 +47,7 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
     (130000, uint256("0x5f9d81f3bda7a68771fc6610b6899f5e6da9fb1f3dac8cf3fa561b1a1003bbd8"))
     (476850, uint256("0x3a0982b853de996d303fad4c9a4317b9b5bf05f6c40b6a4e2af98941fd73415a"))
     (581297, uint256("0xaee1b61f340d42be4d4d4f85c8601fecabc4e272d6838d39f365c1e60a29200f"));
-	
+
 
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
@@ -70,7 +70,7 @@ static const Checkpoints::CCheckpointData dataTestnet = {
 static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
     boost::assign::map_list_of
     (0, uint256("0x000000e1febc39965b055e8e0117179a4d18e24e7aaa0c69864c4054b4f29445"));
-    
+
 static const Checkpoints::CCheckpointData dataRegtest = {
     &mapCheckpointsRegtest,
     1531030598,
@@ -128,11 +128,11 @@ public:
 		nonce: 20710639
 		genesis_hash: 000000e1febc39965b055e8e0117179a4d18e24e7aaa0c69864c4054b4f29445
         */
-        
+
 		const char* pszTimestamp = "The Museum of Fine Arts, Boston MA, is one of the most comprehensive art museums";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
-        txNew.vout.resize(1);		
+        txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         txNew.vout[0].nValue = 0 * COIN;
         txNew.vout[0].scriptPubKey = CScript() << ParseHex("041e2be616cdaadb196b3d15c9587dbf0f5803c04c1df97cc01699cbb7462b90d9efee0d4c4b45b63419d83013c33fa3710cd71f0e0b8f4232ba76877ecb08c847") << OP_CHECKSIG;
@@ -144,7 +144,7 @@ public:
         genesis.nNonce = 20710639;
 		genesis.nBits = 0x1e0ffff0;
         hashGenesisBlock = genesis.GetHash();
-		
+
         assert(hashGenesisBlock == uint256("0x000000e1febc39965b055e8e0117179a4d18e24e7aaa0c69864c4054b4f29445"));
         assert(genesis.hashMerkleRoot == uint256("0x9df20f860896e0e7d9ecc5f490f2d5fd01715553db7000b2d1d3497322400be0"));
 
@@ -156,7 +156,7 @@ public:
         //nZerocoinStartTime = genesis.nTime + 2678400; // 31 days after genesis
         nZerocoinStartTime = genesis.nTime + 600; // 10min after genesis
 		nZerocoinStartHeight = nLastPOWBlock + 1;
-		
+
         vSeeds.push_back(CDNSSeedData("xuez.donkeypool.com", "xuez.donkeypool.com"));
         vSeeds.push_back(CDNSSeedData("xuezeast.donkeypool.com", "xuezeast.donkeypool.com"));
         vSeeds.push_back(CDNSSeedData("seed1.xuezcoin.com", "seed1.xuezcoin.com"));
@@ -240,8 +240,8 @@ public:
         nMaturity = 10;
 		nMaxMoneyOut = 21000000 * COIN;
 		nMinStakeInput = 200 * COIN;
-        nMasternodeCountDrift = 4;        
-        
+        nMasternodeCountDrift = 4;
+
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nVersion = 1;
         genesis.nTime = 1523045620;
@@ -249,7 +249,7 @@ public:
 		genesis.nBits = 0x1e0ffff0;
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x000000e1febc39965b055e8e0117179a4d18e24e7aaa0c69864c4054b4f29445"));
-        
+
 		/** Height or Time Based Activations **/
         nModifierUpdateBlock = 1;
         nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
@@ -257,7 +257,7 @@ public:
 		// THIS MUST BE SOMETIME IN THE FUTURE AFTER BLOCK 1
         nZerocoinStartTime = genesis.nTime + 2678400; // 31 days after genesis
 		nZerocoinStartHeight = nLastPOWBlock + 1;
-		
+
         vFixedSeeds.clear();
         vSeeds.clear();
         vSeeds.push_back(CDNSSeedData("192.166.1.15", "192.166.1.15"));
@@ -315,7 +315,7 @@ public:
 		genesis.nBits = 0x1e0ffff0;
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x000000e1febc39965b055e8e0117179a4d18e24e7aaa0c69864c4054b4f29445"));
-        
+
 		/** Height or Time Based Activations **/
         nModifierUpdateBlock = 1;
         nBlockEnforceSerialRange = 1; //Enforce serial range starting this block
@@ -323,7 +323,7 @@ public:
 		// THIS MUST BE SOMETIME IN THE FUTURE AFTER BLOCK 1
         nZerocoinStartTime = genesis.nTime + 2678400; // 31 days after genesis
 		nZerocoinStartHeight = nLastPOWBlock + 1;
-		
+
         vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Testnet mode doesn't have any DNS seeds.
         fRequireRPCPassword = false;

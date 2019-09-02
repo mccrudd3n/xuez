@@ -1,4 +1,4 @@
-// Copyright (c) 2014-2016 The Dash developers
+// Copyright (c) 2014-2020 The Dash developers
 // Copyright (c) 2017 The PIVX developers     
 // Copyright (c) 2017-2020 The XUEZ developers
 // Distributed under the MIT/X11 software license, see the accompanying

@@ -1,5 +1,5 @@
 // Copyright (c) 2011-2014 The Bitcoin developers
-// Copyright (c) 2014-2015 The Dash developers
+// Copyright (c) 2014-2020 The Dash developers
 // Copyright (c) 2015-2019 The PIVX developers
 // Copyright (c) 2017-2020 The XUEZ developers
 // Distributed under the MIT software license, see the accompanying
