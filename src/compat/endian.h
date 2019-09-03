@@ -7,7 +7,6 @@
 
 #if defined(HAVE_CONFIG_H)
 #include <config/xuez-config.h>
->>>>>>> 26c1b6e1d9f6c8395cce67807eed4ad2bdc90f90
 #endif
 
 #include <compat/byteswap.h>

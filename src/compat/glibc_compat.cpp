@@ -9,7 +9,7 @@
 #endif
 
 #include <cstddef>
-#include <cstddef>
+#include <cstdint>
 
 #if defined(HAVE_SYS_SELECT_H)
 #include <sys/select.h>

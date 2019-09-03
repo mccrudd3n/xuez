@@ -15,7 +15,6 @@
 #include "utilstrencodings.h"
 #include "transaction.h"
 
-#include <boost/foreach.hpp>
 
 extern bool GetTransaction(const uint256 &hash, CTransaction &txOut, uint256 &hashBlock, bool fAllowSlow);
 
@@ -77,8 +76,8 @@ std::string CTxIn::ToString() const
     str += "CTxIn(";
     str += prevout.ToString();
     if (prevout.IsNull())
-        if(scriptSig.IsZerocoinSpend())
-            str += strprintf(", zerocoinspend %s", HexStr(scriptSig));
+        if(IsZerocoinSpend())
+            str += strprintf(", zerocoinspend %s...", HexStr(scriptSig).substr(0, 25));
         else
             str += strprintf(", coinbase %s", HexStr(scriptSig));
     else
@@ -240,7 +239,7 @@ CAmount CTransaction::GetZerocoinMinted() const
 
 bool CTransaction::UsesUTXO(const COutPoint out)
 {
-    for (const CTxIn in : vin) {
+    for (const CTxIn& in : vin) {
         if (in.prevout == out)
             return true;
     }
@@ -273,8 +272,8 @@ CAmount CTransaction::GetZerocoinSpent() const
 int CTransaction::GetZerocoinMintCount() const
 {
     int nCount = 0;
-    for (const CTxOut out : vout) {
-        if (out.scriptPubKey.IsZerocoinMint())
+    for (const CTxOut& out : vout) {
+        if (out.IsZerocoinMint())
             nCount++;
     }
     return nCount;
