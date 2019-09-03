@@ -3,7 +3,7 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "primitives/zerocoin.h"
+#include "zerocoin.h"
 #include <src/streams.h>
 #include "src/hash.h"
 #include "src/util.h"

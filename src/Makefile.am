@@ -78,7 +78,7 @@ endif
 BITCOIN_CORE_H = \
   activemasternode.h \
   accumulators.h \
-  accumulatormap.h \
+  zxuez/accumulatormap.h \
   addrman.h \
   alert.h \
   allocators.h \
